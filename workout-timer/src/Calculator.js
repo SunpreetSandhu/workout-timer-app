@@ -20,7 +20,14 @@ function Calculator({ workouts, allowSound }) {
 
       playSound();
     },
-    [duration]
+    [duration, allowSound]
+  );
+
+  useEffect(
+    function () {
+      document.title = `${number}-${duration}-${sets}`;
+    },
+    [number, duration, sets]
   );
 
   useEffect(
